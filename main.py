@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from export_results_to_excel import export_results_to_excel
 
 # Define flower positions (x, y coordinates), including home at (0, 0)
 flower_positions = np.array([
@@ -83,6 +84,9 @@ def plot_bee_paths(bee_paths):
 num_bees = 7
 max_visits = 30
 bee_paths, total_distances = simulate_bees(num_bees, max_visits)
+
+# Export results to Excel
+export_results_to_excel(bee_paths, total_distances)
 
 # Display results
 for i, (path, distance) in enumerate(zip(bee_paths, total_distances)):
