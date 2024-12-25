@@ -234,7 +234,7 @@ if __name__ == "__main__":
         (-4, 12),  # Flower 2
         (0, 20),   # Flower 3
         (4, 12),   # Flower 4
-        (4, -4),   # Flower 5
+        (4, -4)   # Flower 5
     ]
 
     # Initialize MultiBeeModel
