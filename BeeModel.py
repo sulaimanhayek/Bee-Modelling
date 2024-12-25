@@ -1510,7 +1510,7 @@ class BeeModel:
         start_position,
         flower_positions,
         reinforcement_factor=2.0,
-        max_round_trips=30,
+        max_round_trips=1000,
         steps_per_trip=None
     ):
         """
@@ -1847,19 +1847,19 @@ class BeeModel:
         #     x = [all_positions[idx][0] for idx in path]
         #     y = [all_positions[idx][1] for idx in path]
         #     plt.plot(x, y, marker="o", label=f"Round Trip {i}")
-            # Mark nest in blue, flowers in red
-            # plt.scatter(all_positions[0][0], all_positions[0][1], c="blue", s=80, label="Nest")
-            # plt.scatter(
-            #     [p[0] for p in all_positions[1:]],
-            #     [p[1] for p in all_positions[1:]],
-            #     c="red", s=80, label="Flowers"
-            # )
-            # plt.title(f"Round Trip {i} (Distance={distances[i-1]:.2f})")
-            # plt.xlabel("X")
-            # plt.ylabel("Y")
-            # plt.grid()
-            # plt.legend()
-          #  plt.show()
+        #     #Mark nest in blue, flowers in red
+        #     plt.scatter(all_positions[0][0], all_positions[0][1], c="blue", s=80, label="Nest")
+        #     plt.scatter(
+        #         [p[0] for p in all_positions[1:]],
+        #         [p[1] for p in all_positions[1:]],
+        #         c="red", s=80, label="Flowers"
+        #     )
+        #     plt.title(f"Round Trip {i} (Distance={distances[i-1]:.2f})")
+        #     plt.xlabel("X")
+        #     plt.ylabel("Y")
+        #     plt.grid()
+        #     plt.legend()
+        #     plt.show()
 
         # Plot total distance per round trip
         plt.figure(figsize=(8, 5))
@@ -1893,10 +1893,10 @@ if __name__ == "__main__":
     flower_positions = [
         (-4, -4),  # Flower 1
         (-4, 12),  # Flower 2
-        (0, 20),   # Flower 3
+        #(5, 20),   # Flower 3
         (4, 12),   # Flower 4
-        (4, -4)   # Flower 5
-        # (10,10),
+        (6,5),
+        (4, -4),   # Flower 5
         # (20,0)
     ]
 
@@ -1905,7 +1905,7 @@ if __name__ == "__main__":
         start_position=start_position,
         flower_positions=flower_positions,
         reinforcement_factor=2.0,
-        max_round_trips=30,
+        max_round_trips=1000,
     )
     
     results = bee_model.simulate()
