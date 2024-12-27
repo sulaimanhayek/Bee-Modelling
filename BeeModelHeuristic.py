@@ -289,7 +289,7 @@ class BeeModelHeuristic:
         plt.grid()
         plt.show()
 
-    def export_to_excel(self, filename="bee_simulation_results.xlsx"):
+    def export_to_excel(self, filename="bee_simulation_results_add_flower.xlsx"):
         """Export round_trip_data to Excel."""
         data_rows = []
         for record in self.round_trip_data:
@@ -311,10 +311,10 @@ def main():
     start_position = (0, -12)
     flower_positions = [
         (-4, -4),  # Flower 1
-        (-4, 12),  # Flower 2
-        (0, 20),   # Flower 3
-        (4, 12),   # Flower 4
-        #(6,8), # Additional
+        (-5, 12),  # Flower 2
+        #(0, 20),   # Flower 3
+        (5, 12),   # Flower 4
+        (8,5), # Additional, flower 6
         (4, -4)    # Flower 5
     ]
     # Lihoreau et al. 2010
@@ -339,7 +339,7 @@ def main():
     results = bee_model.simulate()
 
     # Export to Excel
-    bee_model.export_to_excel("bee_simulation_results.xlsx")
+    bee_model.export_to_excel("bee_simulation_results_add_flower.xlsx")
     print("Simulation complete, data exported to 'bee_simulation_results.xlsx'.")
 
 
